@@ -14,7 +14,7 @@
             background: url("{{ asset('images/bg-main.jpeg') }}") center;
             background-size: cover;
             background-repeat: no-repeat;
-            height: 80vh;
+            height: 70vh;
             border-radius: 20px;
         }
 
@@ -23,8 +23,6 @@
             right: 10px;
             transform: translateY(-50%);
         }
-
-
 
         @media screen and (max-width: 768px) {
             form {
@@ -57,26 +55,22 @@
 
             <h1 class="custom-header text-center text-dark text-white font-weight-bolder" style="font-size: 64px;">
                 SiHadir</h1>
-            <form class="bg-light font-weight-bold text-center p-4 shadow mb-5 mx-auto pb-5 shadow" action="login.php"
-                style="width: 550px; height: 500px; border-radius : 45px;">
-                <div class="mb-5 mt-5">
-                    <input type="username" name="username" placeholder="USERNAME" class="form-control rounded-pill"
-                        id="username">
-                </div>
-                <div class="mb-5 form-group input-group password-toggle position-relative">
-                    <input type="password" class="form-control rounded-pill" placeholder="PASSWORD" id="password"
-                        name="password">
-                    <i class="far fa-eye fa-lg pe-auto position-absolute top-50" id="password-toggle"
-                        type="button"></i>
-                </div>
-                <div class="text-start p-2">
-                    <a href="" class="text-decoration-none">Lupa Password?</a>
-                </div>
-                <div class="mt-5">
-                    <button type="submit" class="btn btn-primary w-75 rounded-pill"
-                        style="background-color: #99BBEC">Login</button>
-                </div>
-            </form>
+                <form class="bg-light font-weight-bold text-center p-4 shadow mb-5 mx-auto pb-5 shadow" action="login.php" style="width : 550px; height: 500px; border-radius : 45px;">
+                    <div class="mb-3 mt-3">
+                        <input type="text" name="username" placeholder="USERNAME" class="form-control rounded-pill">
+                    </div>
+                    <div class="mb-3 form-group input-group password-toggle position-relative">
+                        <input type="password" class="form-control rounded-pill" placeholder="PASSWORD" name="password">
+                        <i class="far fa-eye fa-lg pe-auto position-absolute top-50" id="password-toggle" type="button"></i>
+                    </div>
+                    <div class="text-start p-2">
+                        <a href="" class="text-decoration-none">Lupa Password?</a>
+                    </div>
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-primary w-100 rounded-pill" style="background-color: #99BBEC">Login</button>
+                    </div>
+                </form>
+                
         </div>
     </div>
 

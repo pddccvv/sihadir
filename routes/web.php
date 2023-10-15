@@ -26,3 +26,7 @@ Route::get('/dosen/login', function () {
     return view('dosen.login');
 });
 
+Route::get('/dosen/change-password', function () {
+    return view('dosen.change-password');
+});
+
