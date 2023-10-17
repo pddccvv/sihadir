@@ -37,32 +37,41 @@
             background: url("{{ asset('images/bg-main.jpeg') }}");
             background-position: center;
             background-size: cover;
-
+            position: relative;
+            opacity: 0.7;
         }
 
-        .custom-profile ::before {
-            background-color: #78A2CC
-            opacity: 0.7;
-            background-position: center;
-            background-size: cover;
+        .custom-profile::before {
+            content: "";
+            background-color: #78A2CC;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 250px;
+            /* Match the width of the sidebar */
+            height: 100%;
+            opacity: 0.2;
+            /* Adjust the opacity as needed */
             z-index: -1;
-
         }
 
         input::placeholder {
             color: white;
+            padding-left: 20px;
+            font-weight: bold;
         }
 
         .appbar {
             display: none;
+            top: 0;
             height: 100px;
             width: 100%;
             background-color: #78A2CC;
+            margin-bottom: 50px;
         }
 
         @media screen and (max-width: 768px) {
             .sidebar {
-                width: 0;
                 display: none;
             }
 
@@ -70,23 +79,13 @@
                 margin-left: 0;
             }
 
-            .content.open {
-                margin-left: 250px;
+            .appbar {
+                display: flex;
             }
 
-        .appbar {
-            display: flex;
-        }
-
-        .custom-field {
-            width: 100%;
-            max-width: 100%; /* Menggunakan lebar penuh */
-        }
-    }
-
-        @media screen and (min-width: 769px) {
-            .appbar {
-                display: none;
+            .custom-field {
+                width: 100%;
+                max-width: 100%;
             }
         }
     </style>
@@ -109,10 +108,11 @@
         <!-- SIDEBAR -->
         <div class="sidebar" id="side-nav">
             <div class="header-box custom-profile mb-3">
-                <div class="mb-2">
-                    <img src="{{ asset('images/profile.png') }}" alt="profile" class="rounded-circle" width="100px" height="100px">
+                <div class="mb-2" style="z-index: 1">
+                    <img src="{{ asset('images/profile.png') }}" alt="profile" class="rounded-circle" width="100px"
+                        height="100px">
                 </div>
-                <div class="">
+                <div class="" style="z-index: 2">
                     <span class="fw-bold">Ferry Faisal, S.ST., M.T.</span><br>
                     <span>19730206 199501 1 001</span>
                 </div>
@@ -144,10 +144,11 @@
                 </div>
 
                 <!-- Untuk input password lama -->
-                <div class="mb-3 form-group input-group password-toggle position-relative mx-auto" style="width: 650px; height: 60px;">
-                    <input type="password" name="oldPass" id="oldPassword"
-                        class="custom-field form-control shadow"
-                        placeholder="Masukkan Password Lama" style="background-color: #D9D9D9; padding-left: 40px;  border-radius: 12px;">
+                <div class="mb-3 form-group input-group password-toggle position-relative mx-auto"
+                    style="width: 650px; height: 60px;">
+                    <input type="password" name="oldPass" id="oldPassword" class="custom-field form-control shadow"
+                        placeholder="Masukkan Password Lama"
+                        style="background-color: #D9D9D9; padding-left: 40px;  border-radius: 12px;">
                     <i class="far fa-eye fa-lg pe-auto position-absolute top-50 toggle-password" type="button"
                         style="right: 15px;"></i>
                     <i class="fa-solid fa-lock fa-xl position-absolute top-50 left-2"
@@ -155,10 +156,11 @@
                 </div>
 
                 <!-- Untuk input password baru -->
-                <div class="mb-3 form-group input-group password-toggle position-relative mx-auto" style="width: 650px; height: 60px;">
-                    <input type="password" name="newPass" id="newPassword"
-                        class="custom-field form-control  shadow"
-                        placeholder="Masukkan Password Baru" style="background-color: #D9D9D9; padding-left: 40px;  border-radius: 12px;">
+                <div class="mb-3 form-group input-group password-toggle position-relative mx-auto"
+                    style="width: 650px; height: 60px;">
+                    <input type="password" name="newPass" id="newPassword" class="custom-field form-control  shadow"
+                        placeholder="Masukkan Password Baru"
+                        style="background-color: #D9D9D9; padding-left: 40px;  border-radius: 12px;">
                     <i class="far fa-eye fa-lg pe-auto position-absolute top-50 toggle-password" type="button"
                         style="right: 15px;"></i>
                     <i class="fa-solid fa-lock fa-xl position-absolute top-50 left-2"
@@ -166,9 +168,10 @@
                 </div>
 
                 <!-- Untuk input konfirmasi password baru -->
-                <div class="mb-5 form-group input-group password-toggle position-relative mx-auto" style="width: 650px; height: 60px;">
-                    <input type="password" name="repPass" id="repPassword"
-                        class="custom-field form-control  shadow" placeholder="Ulangi Password Baru"
+                <div class="mb-5 form-group input-group password-toggle position-relative mx-auto"
+                    style="width: 650px; height: 60px;">
+                    <input type="password" name="repPass" id="repPassword" class="custom-field form-control  shadow"
+                        placeholder="Ulangi Password Baru"
                         style="background-color: #D9D9D9; padding-left: 40px; border-radius: 12px;">
                     <i class="far fa-eye fa-lg pe-auto position-absolute top-50 toggle-password" type="button"
                         style="right: 15px;"></i>
@@ -177,8 +180,9 @@
                 </div>
 
                 <div class="text-center">
-                    <button class="btn text-white "
-                        style="width:200px; background-color : #757575; border-radius: 45px; font-size: 20px">Ganti
+
+                    <button class="btn text-white" onclick=""
+                        style="width: 200px; background-color: #757575; border-radius: 45px; font-size: 20px">Ganti
                         Password</button>
                 </div>
             </div>
