@@ -30,12 +30,23 @@
         }
 
         .header-box {
-            padding: 20px;
+            padding: 40px 10px 10px 10px;
         }
 
         .custom-profile {
             background: url("{{ asset('images/bg-main.jpeg') }}");
             background-position: center;
+            background-size: cover;
+
+        }
+
+        .custom-profile ::before {
+            background-color: #78A2CC
+            opacity: 0.7;
+            background-position: center;
+            background-size: cover;
+            z-index: -1;
+
         }
 
         input::placeholder {
@@ -98,11 +109,10 @@
         <!-- SIDEBAR -->
         <div class="sidebar" id="side-nav">
             <div class="header-box custom-profile mb-3">
-                <div class="text-center mb-2">
-                    <img src="{{ asset('images/profile.png') }}" alt="profile" class="rounded-circle" width="100px">
-
+                <div class="mb-2">
+                    <img src="{{ asset('images/profile.png') }}" alt="profile" class="rounded-circle" width="100px" height="100px">
                 </div>
-                <div class="text-center">
+                <div class="">
                     <span class="fw-bold">Ferry Faisal, S.ST., M.T.</span><br>
                     <span>19730206 199501 1 001</span>
                 </div>
@@ -134,10 +144,10 @@
                 </div>
 
                 <!-- Untuk input password lama -->
-                <div class="mb-3 form-group input-group password-toggle position-relative">
+                <div class="mb-3 form-group input-group password-toggle position-relative mx-auto" style="width: 650px; height: 60px;">
                     <input type="password" name="oldPass" id="oldPassword"
                         class="custom-field form-control shadow"
-                        placeholder="Masukkan Password Lama" style="background-color: #D9D9D9; padding-left: 40px; width: 750px; height: 80px; border-radius: 12px;">
+                        placeholder="Masukkan Password Lama" style="background-color: #D9D9D9; padding-left: 40px;  border-radius: 12px;">
                     <i class="far fa-eye fa-lg pe-auto position-absolute top-50 toggle-password" type="button"
                         style="right: 15px;"></i>
                     <i class="fa-solid fa-lock fa-xl position-absolute top-50 left-2"
@@ -145,10 +155,10 @@
                 </div>
 
                 <!-- Untuk input password baru -->
-                <div class="mb-3 form-group input-group password-toggle position-relative">
+                <div class="mb-3 form-group input-group password-toggle position-relative mx-auto" style="width: 650px; height: 60px;">
                     <input type="password" name="newPass" id="newPassword"
                         class="custom-field form-control  shadow"
-                        placeholder="Masukkan Password Baru" style="background-color: #D9D9D9; padding-left: 40px; width: 750px; height: 80px; border-radius: 12px;">
+                        placeholder="Masukkan Password Baru" style="background-color: #D9D9D9; padding-left: 40px;  border-radius: 12px;">
                     <i class="far fa-eye fa-lg pe-auto position-absolute top-50 toggle-password" type="button"
                         style="right: 15px;"></i>
                     <i class="fa-solid fa-lock fa-xl position-absolute top-50 left-2"
@@ -156,10 +166,10 @@
                 </div>
 
                 <!-- Untuk input konfirmasi password baru -->
-                <div class="mb-5 form-group input-group password-toggle position-relative">
+                <div class="mb-5 form-group input-group password-toggle position-relative mx-auto" style="width: 650px; height: 60px;">
                     <input type="password" name="repPass" id="repPassword"
                         class="custom-field form-control  shadow" placeholder="Ulangi Password Baru"
-                        style="background-color: #D9D9D9; padding-left: 40px; width: 750px; height: 80px; border-radius: 12px;">
+                        style="background-color: #D9D9D9; padding-left: 40px; border-radius: 12px;">
                     <i class="far fa-eye fa-lg pe-auto position-absolute top-50 toggle-password" type="button"
                         style="right: 15px;"></i>
                     <i class="fa-solid fa-lock fa-xl position-absolute top-50 left-2"
@@ -168,7 +178,7 @@
 
                 <div class="text-center">
                     <button class="btn text-white "
-                        style="width:300px; background-color : #757575; border-radius: 45px; font-size: 30px">Ganti
+                        style="width:200px; background-color : #757575; border-radius: 45px; font-size: 20px">Ganti
                         Password</button>
                 </div>
             </div>
