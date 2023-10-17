@@ -63,10 +63,15 @@
                 margin-left: 250px;
             }
 
-            .appbar {
-                display: flex;
-            }
+        .appbar {
+            display: flex;
         }
+
+        .custom-field {
+            width: 100%;
+            max-width: 100%; /* Menggunakan lebar penuh */
+        }
+    }
 
         @media screen and (min-width: 769px) {
             .appbar {
@@ -130,9 +135,9 @@
 
                 <!-- Untuk input password lama -->
                 <div class="mb-3 form-group input-group password-toggle position-relative">
-                    <input type="password" name="oldPass" id="oldPassword" class="custom-field form-control shadow"
-                        placeholder="Masukkan Password Lama"
-                        style="background-color: #D9D9D9; padding-left: 40px; width: 200px; height: 60px; border-radius: 12px;">
+                    <input type="password" name="oldPass" id="oldPassword"
+                        class="custom-field form-control shadow"
+                        placeholder="Masukkan Password Lama" style="background-color: #D9D9D9; padding-left: 40px; width: 750px; height: 80px; border-radius: 12px;">
                     <i class="far fa-eye fa-lg pe-auto position-absolute top-50 toggle-password" type="button"
                         style="right: 15px;"></i>
                     <i class="fa-solid fa-lock fa-xl position-absolute top-50 left-2"
@@ -140,10 +145,10 @@
                 </div>
 
                 <!-- Untuk input password baru -->
-                <div class="mb-3 form-group input-group password-toggle">
-                    <input type="password" name="newPass" id="newPassword" class="custom-field form-control  shadow"
-                        placeholder="Masukkan Password Baru"
-                        style="background-color: #D9D9D9; padding-left: 40px; width: 200px; height: 60px; border-radius: 12px;">
+                <div class="mb-3 form-group input-group password-toggle position-relative">
+                    <input type="password" name="newPass" id="newPassword"
+                        class="custom-field form-control  shadow"
+                        placeholder="Masukkan Password Baru" style="background-color: #D9D9D9; padding-left: 40px; width: 750px; height: 80px; border-radius: 12px;">
                     <i class="far fa-eye fa-lg pe-auto position-absolute top-50 toggle-password" type="button"
                         style="right: 15px;"></i>
                     <i class="fa-solid fa-lock fa-xl position-absolute top-50 left-2"
@@ -152,9 +157,9 @@
 
                 <!-- Untuk input konfirmasi password baru -->
                 <div class="mb-5 form-group input-group password-toggle position-relative">
-                    <input type="password" name="repPass" id="repPassword" class="custom-field form-control  shadow"
-                        placeholder="Ulangi Password Baru"
-                        style="background-color: #D9D9D9; padding-left: 40px; width: 200px; height: 60px; border-radius: 12px;">
+                    <input type="password" name="repPass" id="repPassword"
+                        class="custom-field form-control  shadow" placeholder="Ulangi Password Baru"
+                        style="background-color: #D9D9D9; padding-left: 40px; width: 750px; height: 80px; border-radius: 12px;">
                     <i class="far fa-eye fa-lg pe-auto position-absolute top-50 toggle-password" type="button"
                         style="right: 15px;"></i>
                     <i class="fa-solid fa-lock fa-xl position-absolute top-50 left-2"
