@@ -17,10 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('change-password', function () {
-    return view('change-password');
+Route::get('test', function () {
+    return view('test');
 });
-
 
 Route::get('/dosen/login', function () {
     return view('dosen.login');

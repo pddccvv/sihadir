@@ -11,75 +11,70 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous"
         referrerpolicy="no-referrer" />
 
-        <style>
-            .nav-custom {
-                width: 27px;
-            }
-        
-            .sidebar {
-                width: 250px;
-                min-height: 100vh;
-                background-color: #78A2CC;
-                color: white;
-            }
-        
-            .content {
-                flex: 1;
-                padding: 20px;
-                transition: margin-left 0.3s;
-            }
-        
-            .header-box {
-                padding: 20px;
-            }
-        
-            .custom-profile {
-                background: url("{{ asset('images/bg-main.jpeg') }}");
-                background-position: center;
-            }
-        
-            input::placeholder {
-                color: white;
-            }
-        
-            .appbar {
-                display: none;
-                height: 100px;
-                width: 100%;
-                background-color: #78A2CC;
-            }
-        
-            @media screen and (max-width: 768px) {
+    <style>
+        .nav-custom {
+            width: 27px;
+        }
+
         .sidebar {
-            width: 0;
-            display: none;
+            width: 250px;
+            min-height: 100vh;
+            background-color: #78A2CC;
+            color: white;
         }
 
         .content {
-            margin-left: 0;
+            flex: 1;
+            padding: 20px;
+            transition: margin-left 0.3s;
         }
 
-        .content.open {
-            margin-left: 250px;
+        .header-box {
+            padding: 20px;
         }
 
-        .appbar {
-            display: flex;
+        .custom-profile {
+            background: url("{{ asset('images/bg-main.jpeg') }}");
+            background-position: center;
         }
 
-        .custom-field {
-            width: 100%;
-            max-width: 100%; /* Menggunakan lebar penuh */
+        input::placeholder {
+            color: white;
         }
-    }
 
-    @media screen and (min-width: 769px) {
         .appbar {
             display: none;
+            height: 100px;
+            width: 100%;
+            background-color: #78A2CC;
         }
-    }
-        </style>
-        
+
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 0;
+                display: none;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+
+            .content.open {
+                margin-left: 250px;
+            }
+
+            .appbar {
+                display: flex;
+            }
+        }
+
+        @media screen and (min-width: 769px) {
+            .appbar {
+                display: none;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -135,9 +130,9 @@
 
                 <!-- Untuk input password lama -->
                 <div class="mb-3 form-group input-group password-toggle position-relative">
-                    <input type="password" name="oldPass" id="oldPassword"
-                        class="custom-field form-control shadow"
-                        placeholder="Masukkan Password Lama" style="background-color: #D9D9D9; padding-left: 40px; width: 750px; height: 80px; border-radius: 12px;">
+                    <input type="password" name="oldPass" id="oldPassword" class="custom-field form-control shadow"
+                        placeholder="Masukkan Password Lama"
+                        style="background-color: #D9D9D9; padding-left: 40px; width: 200px; height: 60px; border-radius: 12px;">
                     <i class="far fa-eye fa-lg pe-auto position-absolute top-50 toggle-password" type="button"
                         style="right: 15px;"></i>
                     <i class="fa-solid fa-lock fa-xl position-absolute top-50 left-2"
@@ -145,10 +140,10 @@
                 </div>
 
                 <!-- Untuk input password baru -->
-                <div class="mb-3 form-group input-group password-toggle position-relative">
-                    <input type="password" name="newPass" id="newPassword"
-                        class="custom-field form-control  shadow"
-                        placeholder="Masukkan Password Baru" style="background-color: #D9D9D9; padding-left: 40px; width: 750px; height: 80px; border-radius: 12px;">
+                <div class="mb-3 form-group input-group password-toggle">
+                    <input type="password" name="newPass" id="newPassword" class="custom-field form-control  shadow"
+                        placeholder="Masukkan Password Baru"
+                        style="background-color: #D9D9D9; padding-left: 40px; width: 200px; height: 60px; border-radius: 12px;">
                     <i class="far fa-eye fa-lg pe-auto position-absolute top-50 toggle-password" type="button"
                         style="right: 15px;"></i>
                     <i class="fa-solid fa-lock fa-xl position-absolute top-50 left-2"
@@ -157,9 +152,9 @@
 
                 <!-- Untuk input konfirmasi password baru -->
                 <div class="mb-5 form-group input-group password-toggle position-relative">
-                    <input type="password" name="repPass" id="repPassword"
-                        class="custom-field form-control  shadow" placeholder="Ulangi Password Baru"
-                        style="background-color: #D9D9D9; padding-left: 40px; width: 750px; height: 80px; border-radius: 12px;">
+                    <input type="password" name="repPass" id="repPassword" class="custom-field form-control  shadow"
+                        placeholder="Ulangi Password Baru"
+                        style="background-color: #D9D9D9; padding-left: 40px; width: 200px; height: 60px; border-radius: 12px;">
                     <i class="far fa-eye fa-lg pe-auto position-absolute top-50 toggle-password" type="button"
                         style="right: 15px;"></i>
                     <i class="fa-solid fa-lock fa-xl position-absolute top-50 left-2"
@@ -167,7 +162,8 @@
                 </div>
 
                 <div class="text-center">
-                    <button class="btn text-white " style="width:300px; background-color : #757575; border-radius: 45px; font-size: 30px">Ganti
+                    <button class="btn text-white "
+                        style="width:300px; background-color : #757575; border-radius: 45px; font-size: 30px">Ganti
                         Password</button>
                 </div>
             </div>
@@ -183,22 +179,22 @@
         integrity="sha384-mz6fR3HI0VtpMzj7f5vOxkfdz/75P/R6pPZf5F5u+OGpamoFVy38W5P6sl5F5F5u+OGp" crossorigin="anonymous">
     </script>
 
-<script>
-    $(document).ready(function() {
-        $(".toggle-password").click(function() {
-            var passwordInput = $(this).siblings("input[type='password']");
-            if (passwordInput.attr("type") === "password") {
-                passwordInput.attr("type", "text");
-                $(this).removeClass("fa-eye");
-                $(this).addClass("fa-eye-slash");
-            } else {
-                passwordInput.attr("type", "password");
-                $(this).removeClass("fa-eye-slash");
-                $(this).addClass("fa-eye");
-            }
+    <script>
+        $(document).ready(function() {
+            $(".toggle-password").click(function() {
+                var passwordInput = $(this).siblings("input[type='password']");
+                if (passwordInput.attr("type") === "password") {
+                    passwordInput.attr("type", "text");
+                    $(this).removeClass("fa-eye");
+                    $(this).addClass("fa-eye-slash");
+                } else {
+                    passwordInput.attr("type", "password");
+                    $(this).removeClass("fa-eye-slash");
+                    $(this).addClass("fa-eye");
+                }
+            });
         });
-    });
-</script>
+    </script>
 
 </body>
 

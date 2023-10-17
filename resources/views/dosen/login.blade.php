@@ -18,7 +18,6 @@
             border-radius: 20px;
         }
 
-
         .password-toggle i {
             right: 10px;
             transform: translateY(-50%);
@@ -49,13 +48,12 @@
 
 <body class="p-0 m-0">
     <div class="bg-custom">
-        <div class="container d-flex flex-column align-items-center justify-content-center min-vh-100">
+        <div class="container d-flex flex-column align-items-center justify-content-center">
             <img class="custom-logo mx-auto mb-3 mt-5" src="{{ asset('images/logo-polnep.png') }}" alt="logo polnep"
                 width="150px" style="padding-bottom: 24px;">
-
             <h1 class="custom-header text-center text-dark text-white font-weight-bolder" style="font-size: 64px;">
                 SiHadir</h1>
-                <form class="bg-light font-weight-bold text-center p-4 shadow mb-5 mx-auto pb-5 shadow" action="login.php" style="width : 550px; height: 500px; border-radius : 45px;">
+                <form class="bg-light font-weight-bold text-center p-4 shadow mb-5 mx-auto pb-5 shadow align-content-center justify-center" action="login.php" style="width : 550px; height: 500px; border-radius : 45px;">
                     <div class="mb-3 mt-3">
                         <input type="text" name="username" placeholder="USERNAME" class="form-control rounded-pill">
                     </div>
