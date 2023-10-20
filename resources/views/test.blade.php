@@ -4,107 +4,343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
-        a {
-            text-decoration: none !important;
-        }
-
-        .bg-custom {
-            background: url('images/bg-main.jpeg') center;
-            background-size: cover;
-            background-repeat: no-repeat;
+        .appbar {
+            display: none;
+            top: 0;
+            height: 100px;
             width: 100%;
-            height: 70vh;
+            background-color: #78A2CC;
+            margin-bottom: 50px;
         }
 
-        .myform {
+
+        .sidebar {
+            width: 250px;
+            min-height: 100vh;
+            background-color: #78A2CC;
+            color: white;
+        }
+
+        .header-box {
+            padding: 40px 10px 10px 10px;
+        }
+
+        .custom-profile {
+            background: url("{{ asset('images/bg-main.jpeg') }}");
+            background-position: center;
+            background-size: cover;
             position: relative;
-            padding: 1rem;
-            background-color: #ffffff;
-            border: 1px solid rgba(0, 0, 0, .2);
-            border-radius: 1.1rem;
-            padding-bottom: 1rem;
-            height: 500px;
+            opacity: 0.7;
+        }
+
+        .custom-profile::before {
+            content: "";
+            background-color: #78A2CC;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 250px;
+            /* Match the width of the sidebar */
+            height: 100%;
+            opacity: 0.2;
+            /* Adjust the opacity as needed */
+            z-index: -1;
         }
 
         @media screen and (max-width: 768px) {
-            .myform {
-                max-width: 80%;
-                max-height: 80%;
+            .sidebar {
+                display: none;
             }
-        
-        }
 
-        @media screen and (max-width: 576px) {
-            .myform {
-                max-width: 80%;
+            .content {
+                margin-left: 0;
             }
+
+            .appbar {
+                display: flex;
+            }
+
+
+
         }
     </style>
 </head>
 
-<body class="bg-white">
-    <div class="container-fluid bg-custom" style="border-radius: 0 0 40px 40px;">
-        <div class="d-flex justify-content-center align-items-center" style="margin-bottom: 27px">
-            <img src="{{ asset('images/logo-polnep.png') }}" alt="" width="150px" class="mt-5">
+<body>
+    {{-- APP BAR MOBILE VERSION --}}
+    <div class="appbar fixed-top overflow-hidden">
+        <div class="mt-5 ps-2">
+            <i class="fa-solid fa-arrow-left fa-xl"></i>
         </div>
-        <div class="text-center" style="margin-bottom: 97px">
-            <h1 class="text-white" style="font-size: 64px">Si Hadir</h1>
+        <div class="mx-auto mt-5">
+            <h1 class="">Sihadir</h1>
         </div>
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-md-6 col-lg-5 mx-auto">
-                <div class="myform mb-5">
-                    <form action="" method="post" name="login" class="text-center">
-                        <div class="form-group mt-3 mt-md-5 mb-5 ">
-                            <input type="email" name="email" class="form-control  rounded-pill custom-field" id="email"
-                                placeholder="USERNAME" style="">
-                        </div>
-                        <div class="form-group mb-5" style="position: relative;">
-                            <input type="password" name="password" id="password" class="form-control rounded-pill custom-field"
-                                placeholder="PASSWORD" style="background-color: #D9D9D9;">
-                            <span class="input-group-addon">
-                                <i class="fa fa-eye-slash" id="togglePassword"
-                                    style="position: absolute; top: 12px; right: 20px; cursor: pointer;"></i>
-                            </span>
-                        </div>
-                        <div class="">
-                            <a href="#" >Lupa Password?</a>
-                        </div>
-                        <div class="">
-                            <button type="submit" class="btn btn-primary rounded-pill"
-                                style="background-color: #78A2CC; width: 100%; max-width: 450px; height: 45px;">Login</button>
-                        </div>
-                    </form>
+    </div>
+    {{-- END --}}
+
+    <div class="main-container d-flex">
+        <!-- SIDEBAR -->
+        <div class="sidebar" id="side-nav">
+            <div class="header-box custom-profile mb-3">
+                <div class="mb-2" style="z-index: 1">
+                    <img src="{{ asset('images/profile.png') }}" alt="profile" class="rounded-circle" width="100px"
+                        height="100px">
+                </div>
+                <div class="" style="z-index: 2">
+                    <span class="fw-bold">Ferry Faisal, S.ST., M.T.</span><br>
+                    <span>19730206 199501 1 001</span>
                 </div>
             </div>
+            <div class="d-flex flex-column gap-3 p-2">
+                <a href="/" class="text-decoration-none text-white">
+                    <img src="{{ asset('icons/absensi.png') }}" alt="" class=" nav-custom"> Absensi</a>
+                <a href="/" class="text-decoration-none text-white">
+                    <img src="{{ asset('icons/perizinan.png') }}" alt="" class=" nav-custom"> Perizinan</a>
+                <a href="/" class="text-decoration-none text-white">
+                    <img src="{{ asset('icons/change-password.svg') }}" alt="" class=" nav-custom"> Ganti
+                    Password</a>
+                <hr>
+                <a href="/" class="text-decoration-none text-white">
+                    <img src="{{ asset('icons/logout.svg') }}" alt="" class=" nav-custom"> Logout</a>
+            </div>
         </div>
-        <footer class="text-center fixed-bottom">
-            <span><b>V.0.1.0</b></span>
-        </footer>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSA5Dk3P5F5F5f5d5c5F" crossorigin="anonymous">
-    </script>
-    <script>
-        const passwordField = document.getElementById("password");
-        const togglePassword = document.getElementById("togglePassword");
+        <!-- END -->
 
-        togglePassword.addEventListener("click", function() {
-            if (passwordField.type === "password") {
-                passwordField.type = "text";
-                togglePassword.className = "fa fa-eye";
-            } else {
-                passwordField.type = "password";
-                togglePassword.className = "fa fa-eye-slash";
-            }
-        });
-    </script>
+        <!-- CONTENT -->
+        <div class="content" style="margin-top:150px;">
+            <div class="main-content" style="margin-left: 25px">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-wrapper">
+                            <div class="row">
+                                <div id="content" class="content">
+                                    <!-- CURRENT JADWAL -->
+                                    <div class="col-sm-11 p-5 flex justify-content-center justify-content-lg-start border shadow rounded-3 mb-5"
+                                        style="" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                                        aria-expanded="false" aria-controls="collapseExample">
+                                        <h1 class="ml-lg-2">PBL</h1>
+                                        <h1 class="ml-lg-2">07.00 - 12.00</h1>
+                                        <hr>
+                                        <div class="collapse" id="collapseExample">
+                                            <table
+                                                class="table table-striped table-hover table-bordered custom-rounded-table"
+                                                style="border-radius: 40px;">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <span>Adi Suryadi</span> <br>
+                                                            <span>3202116089</span>
+                                                        </th>
+                                                        </span>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="" role="group">
+                                                                <button type="button"
+                                                                    class="btn btn-success rounded-pill">valid<i
+                                                                        class="fa-solid fa-check fa-lg"></i></button>
+                                                                <button type="button"
+                                                                    class="btn btn-danger rounded-pill">Invalid<i
+                                                                        class="fa-solid fa-xmark fa-xl"></i></button>
+                                                            </div>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+
+                                                        <th>
+                                                            <span>Adi Suryadi</span> <br>
+                                                            <span>3202116089</span>
+                                                        </th>
+                                                        </span>
+                                                        </th>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="" role="group">
+                                                                <button type="button"
+                                                                    class="btn btn-success rounded-pill">valid<i
+                                                                        class="fa-solid fa-check fa-lg"></i></button>
+                                                                <button type="button"
+                                                                    class="btn btn-danger rounded-pill">Invalid<i
+                                                                        class="fa-solid fa-xmark fa-xl"></i></button>
+                                                            </div>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+
+                                                        <th>
+                                                            <span>Adi Suryadi</span> <br>
+                                                            <span>3202116089</span>
+                                                        </th>
+                                                        </span>
+                                                        </th>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="" role="group">
+                                                                <button type="button"
+                                                                    class="btn btn-success rounded-pill">valid<i
+                                                                        class="fa-solid fa-check fa-lg"></i></button>
+                                                                <button type="button"
+                                                                    class="btn btn-danger rounded-pill">Invalid<i
+                                                                        class="fa-solid fa-xmark fa-xl"></i></button>
+                                                            </div>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+
+                                                        <th>
+                                                            <span>Adi Suryadi</span> <br>
+                                                            <span>3202116089</span>
+                                                        </th>
+                                                        </span>
+                                                        </th>
+
+                                                    </tr>
+                                                    <th>
+                                                        <div class="" role="group">
+                                                            <button type="button"
+                                                                class="btn btn-success rounded-pill">valid<i
+                                                                    class="fa-solid fa-check fa-lg"></i></button>
+                                                            <button type="button"
+                                                                class="btn btn-danger rounded-pill">Invalid<i
+                                                                    class="fa-solid fa-xmark fa-xl"></i></button>
+                                                        </div>
+                                                    </th>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    {{-- END --}}
+                                </div>
+                            </div>
+
+                            <!-- NEXT JADWAL -->
+                            <div class="col-sm-11 p-5 flex justify-content-center justify-content-lg-start border shadow rounded-3 mb-5"
+                                style="" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                                aria-expanded="false" aria-controls="collapseExample">
+                                <h1 class="ml-lg-2">PEMOGRAMAN WEB</h1>
+                                <h1 class="ml-lg-2">07.00 - 12.00</h1>
+                                <hr>
+                                <div class="collapse" id="collapseExample">
+                                    <table class="table table-striped table-hover table-bordered custom-rounded-table"
+                                        style="border-radius: 40px;">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <span>Adi Suryadi</span> <br>
+                                                    <span>3202116089</span>
+                                                </th>
+                                                </span>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    <div class="" role="group">
+                                                        <button type="button"
+                                                            class="btn btn-success rounded-pill">valid<i
+                                                                class="fa-solid fa-check fa-lg"></i></button>
+                                                        <button type="button"
+                                                            class="btn btn-danger rounded-pill">Invalid<i
+                                                                class="fa-solid fa-xmark fa-xl"></i></button>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            <tr>
+
+                                                <th>
+                                                    <span>Adi Suryadi</span> <br>
+                                                    <span>3202116089</span>
+                                                </th>
+                                                </span>
+                                                </th>
+
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    <div class="" role="group">
+                                                        <button type="button"
+                                                            class="btn btn-success rounded-pill">valid<i
+                                                                class="fa-solid fa-check fa-lg"></i></button>
+                                                        <button type="button"
+                                                            class="btn btn-danger rounded-pill">Invalid<i
+                                                                class="fa-solid fa-xmark fa-xl"></i></button>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            <tr>
+
+                                                <th>
+                                                    <span>Adi Suryadi</span> <br>
+                                                    <span>3202116089</span>
+                                                </th>
+                                                </span>
+                                                </th>
+
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    <div class="" role="group">
+                                                        <button type="button"
+                                                            class="btn btn-success rounded-pill">valid<i
+                                                                class="fa-solid fa-check fa-lg"></i></button>
+                                                        <button type="button"
+                                                            class="btn btn-danger rounded-pill">Invalid<i
+                                                                class="fa-solid fa-xmark fa-xl"></i></button>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            <tr>
+
+                                                <th>
+                                                    <span>Adi Suryadi</span> <br>
+                                                    <span>3202116089</span>
+                                                </th>
+                                                </span>
+                                                </th>
+
+                                            </tr>
+                                            <th>
+                                                <div class="" role="group">
+                                                    <button type="button"
+                                                        class="btn btn-success rounded-pill">valid<i
+                                                            class="fa-solid fa-check fa-lg"></i></button>
+                                                    <button type="button"
+                                                        class="btn btn-danger rounded-pill">Invalid<i
+                                                            class="fa-solid fa-xmark fa-xl"></i></button>
+                                                </div>
+                                            </th>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END -->
+
+            {{-- SEND MAIL --}}
+            <div>
+                <input type="submit">
+            </div>
+        </div>
+
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>
 
 </html>
